@@ -25,44 +25,47 @@
 
         .page {
             display: flex;
-            min-height: 297mm;
+            width: 210mm;
+            height: 297mm;
+            overflow: hidden;
         }
 
         /* === SIDEBAR === */
         .sidebar {
-            width: 218px;
+            width: 200px;
             background: #f5f5f5;
-            padding: 22px 16px 16px 16px;
+            padding: 16px 14px 12px 14px;
             flex-shrink: 0;
             border-right: 3px solid #4caf50;
+            overflow: hidden;
         }
 
         .photo {
-            width: 100px;
-            height: 100px;
+            width: 85px;
+            height: 85px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center 15%;
             display: block;
-            margin: 0 auto 10px auto;
+            margin: 0 auto 8px auto;
             border: 3px solid #4caf50;
         }
 
         .name-block {
             text-align: center;
-            margin-bottom: 18px;
-            padding-bottom: 14px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
             border-bottom: 1px solid #ddd;
         }
 
         .name-block h1 {
-            font-size: 15.5pt;
+            font-size: 13.5pt;
             font-weight: 700;
             color: #333;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            line-height: 1.25;
-            margin-bottom: 6px;
+            line-height: 1.2;
+            margin-bottom: 4px;
         }
 
         .name-block .role {
@@ -75,17 +78,17 @@
 
         /* Sidebar sections */
         .sidebar section {
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .sidebar h2 {
-            font-size: 7.8pt;
+            font-size: 7.4pt;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             color: #555;
-            margin-bottom: 6px;
-            padding-bottom: 3px;
+            margin-bottom: 4px;
+            padding-bottom: 2px;
             border-bottom: 1px solid #ddd;
         }
 
@@ -95,8 +98,8 @@
         }
 
         .sidebar li {
-            padding: 1.5px 0;
-            font-size: 7.8pt;
+            padding: 1px 0;
+            font-size: 7.4pt;
             color: #444;
         }
 
@@ -104,9 +107,9 @@
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 7px;
-            padding: 3px 0;
-            font-size: 7.6pt;
+            gap: 5px;
+            padding: 2px 0;
+            font-size: 7.2pt;
             color: #444;
         }
 
@@ -123,8 +126,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5px 0;
-            font-size: 7.8pt;
+            padding: 1px 0;
+            font-size: 7.2pt;
             color: #444;
         }
 
@@ -146,8 +149,8 @@
         .detail-row {
             display: flex;
             justify-content: space-between;
-            padding: 1.5px 0;
-            font-size: 7.6pt;
+            padding: 1px 0;
+            font-size: 7.2pt;
         }
 
         .detail-row strong { color: #555; font-weight: 600; }
@@ -163,9 +166,9 @@
         .interest-tag {
             background: #fff;
             color: #555;
-            padding: 2px 7px;
+            padding: 1px 5px;
             border-radius: 8px;
-            font-size: 6.8pt;
+            font-size: 6.4pt;
             font-weight: 500;
             border: 1px solid #ccc;
         }
@@ -174,7 +177,7 @@
         .achievements li {
             position: relative;
             padding-left: 10px;
-            font-size: 7.6pt;
+            font-size: 7.2pt;
         }
 
         .achievements li::before {
@@ -348,8 +351,8 @@
             <div class="skill-row"><span>6DOF / Nav / Sensors</span> <div class="skill-bar-wrap"><div class="skill-bar bar-expert"></div></div></div>
             <div class="skill-row"><span>ISO Verification</span> <div class="skill-bar-wrap"><div class="skill-bar bar-expert"></div></div></div>
             <div class="skill-row"><span>Antora Docs</span> <div class="skill-bar-wrap"><div class="skill-bar bar-expert"></div></div></div>
-            <div class="skill-row"><span>C++</span> <div class="skill-bar-wrap"><div class="skill-bar bar-proficient"></div></div></div>
-            <div class="skill-row"><span>Python</span> <div class="skill-bar-wrap"><div class="skill-bar bar-proficient"></div></div></div>
+            <div class="skill-row"><span>C++</span> <div class="skill-bar-wrap"><div class="skill-bar bar-expert"></div></div></div>
+            <div class="skill-row"><span>Python</span> <div class="skill-bar-wrap"><div class="skill-bar bar-expert"></div></div></div>
             <div class="skill-row"><span>C#, Java</span> <div class="skill-bar-wrap"><div class="skill-bar bar-proficient"></div></div></div>
             <div class="skill-row"><span>Arduino / ESP32</span> <div class="skill-bar-wrap"><div class="skill-bar bar-proficient"></div></div></div>
             <div class="skill-row"><span>TwinCAT / PikeOS</span> <div class="skill-bar-wrap"><div class="skill-bar bar-proficient"></div></div></div>
