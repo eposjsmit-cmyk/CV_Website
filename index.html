@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johan Dupreez Smit | Mechatronic Engineer</title>
+    <style>
+        :root {
+            --green-500: #4caf50;
+            --green-600: #43a047;
+            --green-700: #388e3c;
+            --grey-900: #212121;
+            --grey-800: #333;
+            --grey-700: #555;
+            --grey-600: #666;
+            --grey-500: #888;
+            --grey-300: #ccc;
+            --grey-200: #e0e0e0;
+            --grey-100: #f5f5f5;
+            --white: #fff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--grey-800);
+            line-height: 1.6;
+            background: var(--grey-100);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--grey-900) 0%, #37474f 60%, #455a64 100%);
+            color: var(--white);
+            padding: 65px 0 45px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .hero .subtitle {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            color: var(--green-500);
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            font-weight: 500;
+        }
+
+        .hero .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .hero .contact-bar a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .hero .contact-bar a:hover { color: var(--white); }
+        .hero .contact-bar span { color: rgba(255,255,255,0.6); }
+
+        /* Nav */
+        nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--grey-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav a {
+            display: block;
+            padding: 14px 26px;
+            text-decoration: none;
+            color: var(--grey-700);
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--green-600);
+            border-bottom-color: var(--green-500);
+        }
+
+        /* Container */
+        .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+        section { padding: 50px 0; }
+        section:nth-child(even) { background: var(--white); }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--grey-800);
+            margin-bottom: 28px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--green-500);
+            border-radius: 2px;
+        }
+
+        /* Profile */
+        .profile-text {
+            font-size: 1.02rem;
+            line-height: 1.8;
+            color: var(--grey-600);
+            max-width: 800px;
+            border-left: 3px solid var(--grey-200);
+            padding-left: 20px;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 30px;
+            padding-left: 18px;
+            border-left: 2px solid var(--grey-200);
+            transition: border-color 0.3s;
+        }
+
+        .job:hover { border-left-color: var(--green-500); }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 2px;
+        }
+
+        .job-title {
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: var(--grey-900);
+        }
+
+        .job-date {
+            font-size: 0.82rem;
+            color: var(--green-600);
+            font-weight: 600;
+        }
+
+        .job-company {
+            font-size: 0.92rem;
+            color: var(--grey-500);
+            font-weight: 500;
+        }
+
+        .job-role-history {
+            font-size: 0.8rem;
+            color: var(--grey-500);
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .job ul { padding-left: 18px; }
+
+        .job li {
+            margin-bottom: 5px;
+            color: var(--grey-600);
+        }
+
+        .job li::marker { color: var(--green-500); }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 18px;
+            border: 1px solid var(--grey-200);
+        }
+
+        .skill-category h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--grey-800);
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--grey-200);
+        }
+
+        .skill-category ul { list-style: none; padding: 0; }
+
+        .skill-category li {
+            padding: 4px 0;
+            color: var(--grey-600);
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-bar-outer {
+            width: 70px;
+            height: 5px;
+            background: var(--grey-200);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-bar-inner { height: 100%; border-radius: 3px; }
+        .sb-expert { width: 100%; background: var(--green-500); }
+        .sb-proficient { width: 70%; background: var(--grey-500); }
+        .sb-familiar { width: 40%; background: var(--grey-300); }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 20px;
+            padding-left: 18px;
+            border-left: 2px solid var(--grey-200);
+            transition: border-color 0.3s;
+        }
+
+        .edu-item:hover { border-left-color: var(--green-500); }
+
+        .edu-item h3 { font-size: 1.02rem; color: var(--grey-900); }
+        .edu-item .edu-school { color: var(--grey-500); font-size: 0.9rem; font-weight: 500; }
+        .edu-item .edu-thesis { color: var(--grey-500); font-size: 0.86rem; margin-top: 4px; font-style: italic; }
+
+        .cum-laude-badge {
+            display: inline-block;
+            background: var(--green-500);
+            color: #fff;
+            font-size: 0.68rem;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-style: normal;
+            vertical-align: middle;
+            margin-left: 6px;
+            letter-spacing: 1px;
+        }
+
+        /* Achievements */
+        .achievements-list { list-style: none; padding: 0; }
+
+        .achievements-list li {
+            padding: 7px 0 7px 22px;
+            position: relative;
+            color: var(--grey-600);
+        }
+
+        .achievements-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 8px;
+            height: 8px;
+            border: 2px solid var(--green-500);
+            border-radius: 50%;
+        }
+
+        /* Interests */
+        .interests-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .interest-tag {
+            background: var(--white);
+            color: var(--grey-700);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            border: 1px solid var(--grey-300);
+            transition: all 0.3s;
+        }
+
+        .interest-tag:hover {
+            border-color: var(--green-500);
+            color: var(--green-600);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--grey-900);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 28px 0;
+            font-size: 0.83rem;
+        }
+
+        @media print {
+            nav { display: none; }
+            .hero { padding: 30px 0 20px; }
+            section { padding: 25px 0; }
+            body { background: white; }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            nav a { padding: 12px 14px; font-size: 0.72rem; }
+            .job-header { flex-direction: column; }
+            .container { padding: 0 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="container">
+        <h1>Johan Dupreez Smit</h1>
+        <div class="subtitle">Principal Development Engineer &bull; Mechatronic Engineer</div>
+        <div class="contact-bar">
+            <a href="mailto:epos.jsmit@gmail.com">epos.jsmit@gmail.com</a>
+            <span>084 861 4381</span>
+            <span>Somerset West, South Africa</span>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#interests">Interests</a></li>
+    </ul>
+</nav>
+
+<section id="profile">
+    <div class="container">
+        <h2 class="section-title">Profile</h2>
+        <p class="profile-text">
+            Principal Development Engineer with a strong foundation in avionics, control systems, and simulation within the aerospace domain.
+            Skilled in developing advanced aircraft simulations, including 6DOF, navigation, and sensor systems, using C++, MATLAB, and Simulink.
+            Proficient in translating complex requirements into robust, ISO-compliant designs, with a solid track record of producing detailed
+            documentation and verification protocols using tools like Antora Docs. Experienced in ensuring effective communication between ground
+            systems and dynamic targets. Collaborative team leader with a passion for practical solutions, active living, and bringing creativity
+            into technical disciplines.
+        </p>
+    </div>
+</section>
+
+<section id="experience">
+    <div class="container">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Principal Development Engineer</span>
+                <span class="job-date">Nov 2025 &ndash; Present</span>
+            </div>
+            <div class="job-company">S-Plane Automation, Somerset West</div>
+            <div class="job-role-history">
+                Previously: Senior Development Engineer (Nov 2023 &ndash; Oct 2025) &bull; Development Engineer (Nov 2021 &ndash; Oct 2023)
+            </div>
+            <ul>
+                <li>Lead the design, implementation, and verification of complex avionics and control system simulations (6DOF, navigation, sensors) using C++.</li>
+                <li>Utilise MATLAB and Simulink extensively for control systems design, vector calculations, and calibration for dynamic target tracking and ground communication.</li>
+                <li>Develop and maintain clear, ISO-standard documentation and guides using Antora Docs.</li>
+                <li>Integrate technologies including UDP, IP scanning, CircleCI, Jira, Confluence, Balsamiq, and Odoo.</li>
+                <li>Collaborate closely within the automation team to deliver high-precision, reliable systems.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Freelance Developer &amp; Designer</span>
+                <span class="job-date">Dec 2016 &ndash; 2022</span>
+            </div>
+            <div class="job-company">Formo Fibreglass CC, Somerset West</div>
+            <ul>
+                <li>Built a stock-taking Python app linked with Google Sheets.</li>
+                <li>Designed and developed CAD drawings and fabricated products.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Freelance GitHub Maintainer</span>
+                <span class="job-date">2019 &ndash; 2020</span>
+            </div>
+            <div class="job-company">FESTEC CC, Somerset West</div>
+            <ul>
+                <li>Managed and maintained GitHub repositories and workflows.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Freelance Assembler &amp; System Tester</span>
+                <span class="job-date">Dec 2017 &amp; Jun 2018</span>
+            </div>
+            <div class="job-company">Mellowcabs, Stellenbosch</div>
+            <ul>
+                <li>General assembly for electric car components; designed and tested systems in SolidWorks.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Scribe &amp; Teaching Assistant</span>
+                <span class="job-date">2019 &ndash; 2021</span>
+            </div>
+            <div class="job-company">Stellenbosch University</div>
+            <ul>
+                <li>Supported first-year Applied Mathematics students; facilitated group learning in Strength of Materials; served as head demi leader.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Control &amp; Simulation</h3>
+                <ul>
+                    <li>MATLAB &amp; Simulink <div class="skill-bar-outer"><div class="skill-bar-inner sb-expert"></div></div></li>
+                    <li>6DOF / Navigation / Sensors <div class="skill-bar-outer"><div class="skill-bar-inner sb-expert"></div></div></li>
+                    <li>Flight Dynamics &amp; Calibration <div class="skill-bar-outer"><div class="skill-bar-inner sb-expert"></div></div></li>
+                    <li>ISO Verification &amp; Docs <div class="skill-bar-outer"><div class="skill-bar-inner sb-expert"></div></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Software Development</h3>
+                <ul>
+                    <li>C++ <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>Python <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>C#, Java <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>Git / CircleCI <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>C, VHDL <div class="skill-bar-outer"><div class="skill-bar-inner sb-familiar"></div></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Embedded &amp; Hardware</h3>
+                <ul>
+                    <li>Arduino / ESP32 <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>TwinCAT / PikeOS (RTOS) <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>PCB &amp; Circuit Design <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>CAN / Serial / Ethernet <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>CAD &amp; Manufacturing</h3>
+                <ul>
+                    <li>Autodesk Inventor <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>SolidWorks <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>Additive Mfg / Welding <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Networking &amp; Platforms</h3>
+                <ul>
+                    <li>UDP / Multicast / Telemetry <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>Unity (Simulation) <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>Android / Anvil / Firebase <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>Antora Docs <div class="skill-bar-outer"><div class="skill-bar-inner sb-expert"></div></div></li>
+                    <li>Debian / Linux <div class="skill-bar-outer"><div class="skill-bar-inner sb-familiar"></div></div></li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools &amp; Process</h3>
+                <ul>
+                    <li>Jira / Confluence <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>Balsamiq / Odoo <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                    <li>Home Assistant <div class="skill-bar-outer"><div class="skill-bar-inner sb-proficient"></div></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="education">
+    <div class="container">
+        <h2 class="section-title">Education</h2>
+
+        <div class="edu-item">
+            <h3>MEng Mechatronic Engineering (2020 &ndash; 2022) <span class="cum-laude-badge">CUM LAUDE</span></h3>
+            <div class="edu-school">Stellenbosch University</div>
+            <div class="edu-thesis">Thesis: Optimizing HIV viral load testing via multistage pooling mechanisms and machine learning</div>
+        </div>
+
+        <div class="edu-item">
+            <h3>BEng Mechatronic Engineering (2016 &ndash; 2019)</h3>
+            <div class="edu-school">Stellenbosch University, Multiple Dean's Merit List appearances</div>
+            <div class="edu-thesis">Mini Thesis: EEG-based movement classification with machine learning to control a robotic arm</div>
+        </div>
+
+        <div class="edu-item">
+            <h3>National Senior Certificate (2011 &ndash; 2015)</h3>
+            <div class="edu-school">Parel Vallei High School, Somerset West</div>
+        </div>
+    </div>
+</section>
+
+<section id="achievements">
+    <div class="container">
+        <h2 class="section-title">Achievements</h2>
+        <ul class="achievements-list">
+            <li>MEng passed Cum Laude (75%) &bull; BEng average: 73.4%</li>
+            <li>Dean's Merit List, top 10% of class (multiple years)</li>
+            <li>Golden Key International Honour Society member (since 2017)</li>
+            <li>Biomimicry workshop (Biomimicry SA) &bull; Leadership workshop (SU Leads)</li>
+            <li>Academic mentor &bull; First-year well-being mentor &bull; Head demi leader</li>
+            <li>Athletics &amp; swimming captaincy &bull; Learner council</li>
+            <li>Volunteering: SPCA, Hospice shop, youth group leader</li>
+            <li>First Aid Level 2 certified</li>
+        </ul>
+    </div>
+</section>
+
+<section id="interests">
+    <div class="container">
+        <h2 class="section-title">Interests</h2>
+        <div class="interests-flex">
+            <span class="interest-tag">Running</span>
+            <span class="interest-tag">Triathlons</span>
+            <span class="interest-tag">Cycling</span>
+            <span class="interest-tag">Technical Reading</span>
+            <span class="interest-tag">Cooking</span>
+            <span class="interest-tag">Electronics &amp; DIY</span>
+            <span class="interest-tag">Maker Projects</span>
+            <span class="interest-tag">Gardening</span>
+            <span class="interest-tag">Hiking</span>
+            <span class="interest-tag">Nature</span>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>Johan Dupreez Smit &bull; Principal Development Engineer &bull; Somerset West, South Africa</p>
+        <p style="margin-top: 6px;">References available on request</p>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            if (window.scrollY >= section.offsetTop - 80) current = section.getAttribute('id');
+        });
+        document.querySelectorAll('nav a').forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        });
+    });
+</script>
+
+</body>
+</html>
